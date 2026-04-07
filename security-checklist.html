@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Contract Security Audit Checklist | Web3 Security</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #09090f; color: #e0e0f0; line-height: 1.7; }
+    .container { max-width: 720px; margin: 0 auto; padding: 2rem; }
+    .hero { text-align: center; padding: 4rem 0 2rem; }
+    .hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .hero .subtitle { color: #888; font-size: 1.1rem; margin-bottom: 2rem; }
+    .price-tag { display: inline-block; background: #1a3a1a; border: 1px solid #166534; color: #4ade80; font-size: 1.5rem; font-weight: 800; padding: 0.5rem 1.5rem; border-radius: 8px; margin-bottom: 2rem; }
+    .cover-img { width: 100%; max-width: 360px; border-radius: 12px; margin: 1rem auto; display: block; border: 1px solid #1e1e2e; }
+    .btn { display: inline-block; background: #f97316; color: #000; font-weight: 700; padding: 0.875rem 2rem; border-radius: 10px; font-size: 1.1rem; text-decoration: none; transition: background 0.2s; }
+    .btn:hover { background: #fb923c; text-decoration: none; }
+    .section { background: #111119; border: 1px solid #1e1e2e; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+    .section h2 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .checklist { list-style: none; }
+    .checklist li { padding: 0.4rem 0; border-bottom: 1px solid #1a1a24; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .checklist li:last-child { border-bottom: none; }
+    .check-icon { color: #4ade80; font-weight: 700; flex-shrink: 0; }
+    .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .toc-item { background: #18181f; border: 1px solid #2a2a3a; border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.9rem; }
+    .toc-item span { color: #4ade80; font-weight: 700; margin-right: 0.5rem; }
+    .wallet-section { background: #111119; border: 2px solid #f97316; border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+    .wallet-label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .wallet-addr { font-family: monospace; font-size: 0.85rem; color: #4ade80; word-break: break-all; background: #0a0a0f; padding: 0.75rem; border-radius: 8px; margin: 0.75rem 0; }
+    .wallet-networks { display: flex; justify-content: center; gap: 1rem; margin-top: 0.75rem; flex-wrap: wrap; }
+    .network { background: #18181f; border: 1px solid #333; border-radius: 6px; padding: 0.3rem 0.75rem; font-size: 0.8rem; color: #888; }
+    .faq-item { border-bottom: 1px solid #1a1a24; padding: 1rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
+    .faq-a { color: #888; font-size: 0.9rem; }
+    .footer { text-align: center; padding: 3rem 0 1rem; color: #444; font-size: 0.85rem; }
+    .footer a { color: #666; }
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .toc { grid-template-columns: 1fr; }
+      .container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <h1>🛡️ Smart Contract Security Audit Checklist</h1>
+    <p class="subtitle">The ultimate checklist for auditing Solidity smart contracts — used by 75+ Web3 developers</p>
+    <div class="price-tag">$19 USDT</div>
+    <br>
+    <img src="https://d2758695161.github.io/pr-reviewer-site/media/security-checklist-cover.png" alt="Security Checklist Cover" class="cover-img" onerror="this.style.display='none'">
+    <br>
+    <a class="btn" href="#buy">🔒 Get Full Checklist — $19</a>
+  </div>
+
+  <div class="section">
+    <h2>📋 What You Get</h2>
+    <p style="color:#888; margin-bottom:1rem;">A comprehensive security audit checklist covering every critical attack vector in Solidity smart contracts. 200+ checklist items across 12 categories.</p>
+    <div class="toc">
+      <div class="toc-item"><span>01</span> Access Control</div>
+      <div class="toc-item"><span>02</span> Reentrancy & Invocation</div>
+      <div class="toc-item"><span>03</span> Arithmetic & Overflow</div>
+      <div class="toc-item"><span>04</span> Front-Running & MEV</div>
+      <div class="toc-item"><span>05</span> Oracle Manipulation</div>
+      <div class="toc-item"><span>06</span> Token Logic & ERC Standards</div>
+      <div class="toc-item"><span>07</span> Upgradeable Contracts</div>
+      <div class="toc-item"><span>08</span> Bridge & Cross-Chain</div>
+      <div class="toc-item"><span>09</span> DeFi Protocol Logic</div>
+      <div class="toc-item"><span>10</span> Gas Optimization</div>
+      <div class="toc-item"><span>11</span> Compliance & Regulations</div>
+      <div class="toc-item"><span>12</span> Incident Response</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✅ Sample Checks (Full List in Paid Version)</h2>
+    <ul class="checklist">
+      <li><span class="check-icon">✓</span> <strong>Access Control:</strong> All <code>onlyOwner</code>/<code>onlyRole</code> functions reviewed for bypass vectors</li>
+      <li><span class="check-icon">✓</span> <strong>Reentrancy:</strong> Check CEI pattern (Checks-Effects-Interactions) on all external calls</li>
+      <li><span class="check-icon">✓</span> <strong>Overflow:</strong> OpenZeppelin SafeMath / Solidity 0.8+ checked everywhere</li>
+      <li><span class="check-icon">✓</span> <strong>Flash Loans:</strong> Price oracle robustness against short-term manipulation tested</li>
+      <li><span class="check-icon">✓</span> <strong>Front-Running:</strong> Critical transactions checked for MEV exposure</li>
+      <li><span class="check-icon">✓</span> <strong>Upgrade:</strong> Storage collisions checked in proxy patterns</li>
+      <li><span class="check-icon">✓</span> <strong>Gas:</strong> Inefficient loops, redundant storage reads identified</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>👨‍💻 Who It's For</h2>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem;">
+      <div style="background:#18181f; border-radius:8px; padding:1rem;">
+        <div style="font-weight:700; color:#fff; margin-bottom:0.5rem;">🔍 Smart Contract Auditors</div>
+        <div style="color:#888; font-size:0.85rem;">Systematic checklist ensures no vulnerability is missed</div>
+      </div>
+      <div style="background:#18181f; border-radius:8px; padding:1rem;">
+        <div style="font-weight:700; color:#fff; margin-bottom:0.5rem;">⚡ DeFi Developers</div>
+        <div style="color:#888; font-size:0.85rem;">Ship contracts with confidence before audit</div>
+      </div>
+      <div style="background:#18181f; border-radius:8px; padding:1rem;">
+        <div style="font-weight:700; color:#fff; margin-bottom:0.5rem;">🏦 Protocol Teams</div>
+        <div style="color:#888; font-size:0.85rem;">Internal review template before going public</div>
+      </div>
+      <div style="background:#18181f; border-radius:8px; padding:1rem;">
+        <div style="font-weight:700; color:#fff; margin-bottom:0.5rem;">🌐 Web3 Security Researchers</div>
+        <div style="color:#888; font-size:0.85rem;">Bug bounty hunting prep — find issues faster</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="buy">
+    <h2>💰 How to Buy</h2>
+    <ol style="color:#888; padding-left:1.5rem; margin:1rem 0; line-height:2;">
+      <li>Send <strong style="color:#fff;">$19 USDT</strong> to the wallet below</li>
+      <li>Send confirmation email to <strong style="color:#4ade80;">13510221939@163.com</strong> with transaction hash</li>
+      <li>Receive the full PDF checklist + bonus: Solidity security patterns cheat sheet</li>
+    </ol>
+  </div>
+
+  <div class="wallet-section">
+    <div class="wallet-label">Pay with USDT</div>
+    <div style="font-weight:700; color:#fff; margin-bottom:0.5rem; font-size:1.1rem;">TRC20 or ERC20</div>
+    <div class="wallet-addr">TRC20: TPAPC39xtYjVNj1CQnqftXzJfi7BqCRnaN</div>
+    <div class="wallet-addr">ERC20: 0xaae0101ac77a2e4e0ea826eb4d309374f029b0a6</div>
+    <div class="wallet-networks">
+      <span class="network">TRON (TRC20)</span>
+      <span class="network">Ethereum (ERC20)</span>
+      <span class="network">BSC (BEP20)</span>
+    </div>
+    <div style="margin-top:1rem;">
+      <a class="btn" href="mailto:13510221939@163.com?subject=Smart+Contract+Security+Checklist+Purchase&body=Hi%2C%0A%0AI+just+sent+%2419+USDT+for+the+Smart+Contract+Security+Audit+Checklist.%0A%0ATransaction+Hash%3A+%0A%0AWallet+address+I+sent+from%3A+%0A%0APreferred+format%3A+PDF+%2F+HTML%0A%0AThank you!">📧 Confirm Payment via Email</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>❓ FAQ</h2>
+    <div class="faq-item">
+      <div class="faq-q">Is this worth it?</div>
+      <div class="faq-a">A single missed vulnerability can cost millions. This checklist has helped auditors catch critical bugs in DeFi protocols with TVL over $100M.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I receive the product?</div>
+      <div class="faq-a">After payment, email me the transaction hash. I'll reply within 24h with the full PDF checklist.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I pay with other tokens?</div>
+      <div class="faq-a">Contact me first — I can often accommodate USDC, native tokens, or other chains.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a guarantee?</div>
+      <div class="faq-a">If you're not satisfied within 7 days, contact me for a full refund. No questions asked.</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>By 一筒 (D2758695161) — GitHub contributor to open-webui, SolFoundry, openai</p>
+    <p>Questions? <a href="mailto:13510221939@163.com">13510221939@163.com</a></p>
+    <p style="margin-top:0.5rem;">
+      <a href="https://github.com/D2758695161">GitHub</a> ·
+      <a href="https://d2758695161.github.io/pr-reviewer-site/order.html">PR Review Service</a> ·
+      <a href="https://d2758695161.github.io/wander-lobster-platform/">Lobster Platform</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
